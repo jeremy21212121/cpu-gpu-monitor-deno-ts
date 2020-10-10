@@ -1,10 +1,9 @@
 import fatalErrorHandler from "../errorHandlers.ts";
-import {
+import type {
   SensorsOutput,
   CpuStatus,
   GpuStatus,
-  ProcessSensorDataFunction,
-  ProcessSensorsError,
+  ProcessSensorDataFunction
 } from "../types.d.ts";
 
 let processSensorsReading: ProcessSensorDataFunction;
@@ -15,7 +14,7 @@ processSensorsReading = (input) => {
     const cpuKey: string | undefined = keys.find((str) => /^k10temp/.test(str));
     if (gpuKey === undefined || cpuKey === undefined) {
       // unsupported hardware. we only support AMD {c/g}pus and likely only a subset of those. dedicated gpu required.
-      throw new ProcessSensorsError("Unsupported hardware");
+      throw new Error("Unsupported hardware");
     }
     // run-time validation of the input object shape as typescript can't help us here since the data comes from a shell command
     // we could use a class for SensorsInput and perform the validation there instead
@@ -35,7 +34,7 @@ processSensorsReading = (input) => {
       input[gpuKey].power1.hasOwnProperty("power1_average")
     );
     if (!inputIsValid) {
-      throw new ProcessSensorsError("Input data lacks necessary properties");
+      throw new Error("Input data lacks necessary properties");
     }
     const cpuOutput: CpuStatus = {
       // run-time validation of these properties was performed earlier

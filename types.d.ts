@@ -48,9 +48,3 @@ export interface ShellCommandError extends Error {
    * For errors that occur when shell commands are executed
    * */
 }
-
-export class ProcessSensorsError extends Error {
-  /**
-   * For errors that occur while processing SensorsInput
-   */
-}

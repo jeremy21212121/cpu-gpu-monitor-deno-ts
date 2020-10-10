@@ -5,7 +5,7 @@
 
 import fatalErrorHandler from "../errorHandlers.ts";
 
-const clientScriptPaths = ["chart/Chart.min.js", "chart/utils.js"];
+const clientScriptPaths = ["chart/client/Chart.min.js", "chart/client/utils.js"];
 
 const getClientDepencies = async (): Promise<string[]> => {
   let output = ["", ""];
