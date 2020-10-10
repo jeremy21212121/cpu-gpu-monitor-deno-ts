@@ -7,7 +7,6 @@ import { onSignal } from "https://deno.land/std@0.69.0/signal/mod.ts";
 // ten seconds in ms
 const intervalMs = 10000;
 
-// const readings: Array<SensorsOutput> = [];
 const labels: Array<SensorsOutput["time"]> = [];
 const cpuTempData: Array<CpuStatus["temp"]> = [];
 const gpuTempData: Array<GpuStatus["temp"]> = [];
@@ -21,7 +20,6 @@ const takeReading = async (): Promise<void> => {
   }
   // We have to check for undefined here, even though that should not be possible.
   if (outputSensorsReading) {
-    // readings.push(outputSensorsReading);
     labels.push(outputSensorsReading.time);
     cpuTempData.push(outputSensorsReading.cpu.temp);
     gpuTempData.push(outputSensorsReading.gpu.temp);
