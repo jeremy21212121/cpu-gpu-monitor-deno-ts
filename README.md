@@ -21,3 +21,11 @@ deno run --allow-run --allow-read --allow-write --unstable main.ts
 It will take readings every 10 seconds until receiving SIGINT (Ctrl+C), then generate a chart HTML file in the `public` directory.
 
 The chart shows the CPU/GPU temps over time. This is also storing the GPU power draw (watts), but it is not currently incorporated into the chart.
+
+# Licenses
+
+Released under the MIT license.
+
+Chart.min.js, used by the generated HTML charts, is also MIT licensed, copyright Chart.js contributors.
+
+The HTML template is based off of the Chart.js bar chart example.
