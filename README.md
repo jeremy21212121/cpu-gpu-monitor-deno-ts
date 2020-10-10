@@ -4,7 +4,7 @@ This is a Deno / TypeScript CLI tool to monitor AMD CPU/GPUs on linux. I needed 
 
 Running `main.ts` will take measurements every 10 seconds, then generate an HTML chart upon receiving SIGINT (Ctrl + C).
 
-It depends on having a `sensors` binary on your path, with should be the case with most common linux distros AFAIK.
+It depends on having a `sensors` binary on your path, which should be the case with most common linux distros AFAIK.
 
 
 ## Running
