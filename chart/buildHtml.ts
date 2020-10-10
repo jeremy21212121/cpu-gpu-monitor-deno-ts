@@ -50,8 +50,9 @@ const buildHtml = (
 			}]
 
 		};
+		const zeroPad = n => n.toString().padStart(2, '0');
 		// returns HH:MM:SS string
-		const getTime = (str) => { const d = new Date(str); return [d.getHours(),d.getMinutes(),d.getSeconds()].join(':'); }
+		const getTime = (str) => { const d = new Date(str); return [d.getHours(),zeroPad(d.getMinutes()),zeroPad(d.getSeconds())].join(':'); }
     // parse date strings into date objects
     barChartData.labels = barChartData.labels.map(getTime);
 		window.onload = function() {
@@ -68,6 +69,13 @@ const buildHtml = (
 						display: true,
 						text: 'CPU/GPU Temperatures'
 					},
+					scales: {
+						yAxes: [{
+							ticks: {
+								beginAtZero: true
+							}
+						}]
+					}
 				}
 			});
 
