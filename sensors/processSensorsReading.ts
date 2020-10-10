@@ -1,11 +1,11 @@
-import fatalErrorHandler from "./errorHandlers.ts";
+import fatalErrorHandler from "../errorHandlers.ts";
 import {
   SensorsOutput,
   CpuStatus,
   GpuStatus,
   ProcessSensorDataFunction,
   ProcessSensorsError,
-} from "./types.ts";
+} from "../types.d.ts";
 
 let processSensorsReading: ProcessSensorDataFunction;
 processSensorsReading = (input) => {

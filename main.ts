@@ -1,7 +1,7 @@
-import getSensorsReading from "./getSensorsReading.ts";
-import processSensorsReading from "./processSensorsReading.ts";
+import getSensorsReading from "./sensors/getSensorsReading.ts";
+import processSensorsReading from "./sensors/processSensorsReading.ts";
 import generateChart from "./chart/generateChart.ts";
-import type { CpuStatus, GpuStatus, SensorsOutput } from "./types.ts";
+import type { CpuStatus, GpuStatus, SensorsOutput } from "./types.d.ts";
 import { onSignal } from "https://deno.land/std@0.69.0/signal/mod.ts";
 
 // ten seconds in ms

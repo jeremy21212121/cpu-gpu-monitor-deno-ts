@@ -1,9 +1,9 @@
 /**
  * Runs the 'sensors' binary and returns a SensorsInput object
  */
-import type { SensorsInput, ShellCommandError } from "./types.ts";
+import type { SensorsInput, ShellCommandError } from "../types.d.ts";
 
-import fatalErrorHandler from "./errorHandlers.ts";
+import fatalErrorHandler from "../errorHandlers.ts";
 
 const getSensorsReading = async (): Promise<SensorsInput|undefined> => {
   try {
